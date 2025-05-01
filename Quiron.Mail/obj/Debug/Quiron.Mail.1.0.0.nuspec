@@ -13,7 +13,7 @@
     <releaseNotes>Bug fix</releaseNotes>
     <copyright>MIT</copyright>
     <tags>quiron,mail</tags>
-    <repository type="git" url="https://github.com/EliasRMJ/Quiron.Mail" commit="b6c3025e616a867e2f84ae55976bfc24e00387ef" />
+    <repository type="git" url="https://github.com/EliasRMJ/Quiron.Mail" commit="6b98de3c7360ebe3f16853a133e2d0fc6fe6b3b6" />
     <dependencies>
       <group targetFramework="net9.0">
         <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="9.0.4" exclude="Build,Analyzers" />

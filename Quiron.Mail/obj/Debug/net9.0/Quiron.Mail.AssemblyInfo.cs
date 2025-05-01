@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("MIT")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Package that allows you to configure and send emails easily in your project.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6c3025e616a867e2f84ae55976bfc24e00387ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b98de3c7360ebe3f16853a133e2d0fc6fe6b3b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Quiron.Mail")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Quiron.Mail")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
