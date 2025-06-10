@@ -1,6 +1,8 @@
 ﻿using MailKit;
+using MailKit.Security;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
+using MimeKit.Text;
 using System.Text;
 
 namespace Quiron.Mail
@@ -9,6 +11,7 @@ namespace Quiron.Mail
     {
         protected virtual bool UserSsl => true;
         protected virtual bool ServerCertificateValidation => true;
+        protected virtual SecureSocketOptions SecureSocketOptions => SecureSocketOptions.StartTls;
 
         public async virtual Task SendMailAsync(ParamEmail from, ParamEmail to, string subject
             , string message, MailAttachment[] mailAttachments, MessagePriority messagePriority = MessagePriority.Normal)
@@ -27,7 +30,7 @@ namespace Quiron.Mail
             mimeMessage.From.Add(new MailboxAddress(from.Name, from.Email));
             mimeMessage.To.AddRange(mailboxAddresses);
             mimeMessage.Subject = subject;
-            mimeMessage.Body = new TextPart("html") { Text = message };
+            mimeMessage.Body = new TextPart(TextFormat.Html) { Text = message };
             mimeMessage.Priority = messagePriority;
 
             if (mailAttachments is not null)
@@ -46,14 +49,14 @@ namespace Quiron.Mail
             }
 
             using var client = new MailKit.Net.Smtp.SmtpClient();
-            client.ServerCertificateValidationCallback += (sender, certificate, chain, errors) => { return this.ServerCertificateValidation; };
-
+            if (this.ServerCertificateValidation)
+                client.ServerCertificateValidationCallback += (sender, certificate, chain, errors) => { return this.ServerCertificateValidation; };
 
             try
             {
                 int port = configuration["SMTP:Port"] is not null ? int.Parse(configuration["SMTP:Port"]!) : 0;
-                await client.ConnectAsync(configuration["SMTP:Host"], port, this.UserSsl);
-                await client.AuthenticateAsync(configuration["SMTP:Username"], configuration["SMTP:Password"]);
+                await client.ConnectAsync(configuration["SMTP:Host"], port, this.SecureSocketOptions);
+                await client.AuthenticateAsync(configuration["SMTP:Usermail"], configuration["SMTP:Password"]);
 
                 await client.SendAsync(mimeMessage);
             }

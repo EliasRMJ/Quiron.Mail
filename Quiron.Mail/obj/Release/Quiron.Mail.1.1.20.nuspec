@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Quiron.Mail</id>
+    <version>1.1.20</version>
+    <title>Quiron.Mail</title>
+    <authors>EliasRMJ</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>quiron-package.png</icon>
+    <readme>README.md</readme>
+    <description>Package that allows you to configure and send emails easily in your project.</description>
+    <releaseNotes>Add new property - SecureSocketOptions</releaseNotes>
+    <copyright>MIT</copyright>
+    <tags>quiron,mail</tags>
+    <repository type="git" url="https://github.com/EliasRMJ/Quiron.Mail" commit="3590044de77dfc8dc56b079bab834a2ef6be9091" />
+    <dependencies>
+      <group targetFramework="net9.0">
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="9.0.4" exclude="Build,Analyzers" />
+        <dependency id="NETCore.MailKit" version="2.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <contentFiles>
+      <files include="any/net9.0/quiron-package.ico" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="C:\Meus Projetos GUI\SGS V_W\Quiron.Mail\Quiron.Mail\bin\Release\net9.0\Quiron.Mail.dll" target="lib\net9.0\Quiron.Mail.dll" />
+    <file src="C:\Meus Projetos GUI\SGS V_W\Quiron.Mail\Quiron.Mail\quiron-package.ico" target="content\quiron-package.ico" />
+    <file src="C:\Meus Projetos GUI\SGS V_W\Quiron.Mail\Quiron.Mail\quiron-package.ico" target="contentFiles\any\net9.0\quiron-package.ico" />
+    <file src="C:\Meus Projetos GUI\SGS V_W\Quiron.Mail\Quiron.Mail\quiron-package.png" target="\quiron-package.png" />
+    <file src="C:\Meus Projetos GUI\SGS V_W\Quiron.Mail\README.md" target="\README.md" />
+  </files>
+</package>
