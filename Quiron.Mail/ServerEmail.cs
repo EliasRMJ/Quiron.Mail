@@ -2,7 +2,6 @@
 using MailKit.Security;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
-using MimeKit.Text;
 using System.Text;
 
 namespace Quiron.Mail
@@ -12,6 +11,11 @@ namespace Quiron.Mail
         protected virtual bool UserSsl => true;
         protected virtual bool ServerCertificateValidation => true;
         protected virtual SecureSocketOptions SecureSocketOptions => SecureSocketOptions.StartTls;
+
+        protected virtual string ContainerHtml(string body)
+        {
+            return body;
+        }
 
         public async virtual Task SendMailAsync(ParamEmail from, ParamEmail to, string subject
             , string message, MailAttachment[] mailAttachments, MessagePriority messagePriority = MessagePriority.Normal)
@@ -30,7 +34,7 @@ namespace Quiron.Mail
             mimeMessage.From.Add(new MailboxAddress(from.Name, from.Email));
             mimeMessage.To.AddRange(mailboxAddresses);
             mimeMessage.Subject = subject;
-            mimeMessage.Body = new TextPart(TextFormat.Html) { Text = message };
+            mimeMessage.Body = new BodyBuilder { HtmlBody = this.ContainerHtml(message) }.ToMessageBody();
             mimeMessage.Priority = messagePriority;
 
             if (mailAttachments is not null)
