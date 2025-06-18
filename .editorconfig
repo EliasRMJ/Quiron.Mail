@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS9113: O parâmetro não está lido.
+dotnet_diagnostic.CS9113.severity = none
