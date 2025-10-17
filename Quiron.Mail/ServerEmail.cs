@@ -5,15 +5,15 @@ using System.Text;
 
 namespace Quiron.Mail
 {
-    public class ServerEmail() : IServerEmail
+    public class ServerEmail : IServerEmail
     {
-        protected virtual bool UserSsl => true;
-        protected virtual bool ServerCertificateValidation => true;
-        protected virtual SecureSocketOptions SecureSocketOptions => SecureSocketOptions.StartTls;
-        protected virtual string? Host => null;
-        protected virtual string? UserMail => null;
-        protected virtual string? Password => null;
-        protected virtual int Port => 0;
+        protected virtual bool UserSsl { get; set; } = true;
+        protected virtual bool ServerCertificateValidation { get; set; } = true;
+        protected virtual SecureSocketOptions SecureSocketOptions { get; set; } = SecureSocketOptions.StartTls;
+        protected virtual string? Host { get; set; } = string.Empty;
+        protected virtual string? UserMail { get; set; } = string.Empty;
+        protected virtual string? Password { get; set; } = string.Empty;
+        protected virtual int Port { get; set; } = 0;
 
         protected virtual string ContainerHtml(string body)
         {
@@ -21,13 +21,13 @@ namespace Quiron.Mail
         }
 
         public async virtual Task SendMailAsync(ParamEmail from, ParamEmail to, string subject
-            , string message, MailAttachment[] mailAttachments, MessagePriority messagePriority = MessagePriority.Normal)
+            , string message, MailAttachment[]? mailAttachments = null, MessagePriority messagePriority = MessagePriority.Normal)
         {
             await this.SendMailAsync(from, [new MailboxAddress(to.Name, to.Email)], subject, message, mailAttachments, messagePriority);
         }
 
         public async virtual Task SendMailAsync(ParamEmail from, InternetAddressList mailboxAddresses, string subject
-            , string message, MailAttachment[] mailAttachments, MessagePriority messagePriority = MessagePriority.Normal)
+            , string message, MailAttachment[]? mailAttachments = null, MessagePriority messagePriority = MessagePriority.Normal)
         {
             ArgumentException.ThrowIfNullOrEmpty(this.Host);
             ArgumentException.ThrowIfNullOrEmpty(this.UserMail);

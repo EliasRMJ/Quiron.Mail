@@ -39,6 +39,19 @@ builder.Services.AddScoped(typeof(IServerEmail), typeof(ServerEmail));
 ```csharp
 public class MyClass(IServerEmail serverEmail)
 {
+    protected override bool UserSsl => true;
+    protected override bool ServerCertificateValidation => false;
+    protected override SecureSocketOptions SecureSocketOptions => (SecureSocketOptions)int.Parse(configuration["SMTP:SecureSocketOptions"]!);
+    protected override string? Host => configuration["SMTP:Host"]!;
+    protected override string? UserMail => configuration["SMTP:Usermail"]!;
+    protected override string? Password => configuration["SMTP:Password"]!;
+    protected override int Port => int.Parse(configuration["SMTP:Port"]!);
+
+    protected override string ContainerHtml(string body)
+    {
+        return base.ContainerHtml(body);
+    }
+
     public async Task SendMailAsync(ParamEmail from, MailboxAddress to, string subject
         , string message, MailAttachment[] mailAttachments, MessagePriority messagePriority = MessagePriority.Normal)
     {

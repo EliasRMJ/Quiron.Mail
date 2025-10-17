@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "Quiron.Mail/1.3.10": {
+      "Quiron.Mail/1.4.01": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
           "NETCore.MailKit": "2.1.0"
@@ -121,7 +121,7 @@
     }
   },
   "libraries": {
-    "Quiron.Mail/1.3.10": {
+    "Quiron.Mail/1.4.01": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
