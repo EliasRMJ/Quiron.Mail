@@ -1,7 +1,6 @@
 ﻿using MailKit;
 using MailKit.Security;
 using MimeKit;
-using System.Text;
 
 namespace Quiron.Mail
 {
@@ -37,33 +36,39 @@ namespace Quiron.Mail
             mimeMessage.From.Add(new MailboxAddress(from.Name, from.Email));
             mimeMessage.To.AddRange(mailboxAddresses);
             mimeMessage.Subject = subject;
-            mimeMessage.Body = new BodyBuilder { HtmlBody = this.ContainerHtml(message) }.ToMessageBody();
             mimeMessage.Priority = messagePriority;
+
+            var bodyBuilder = new BodyBuilder { HtmlBody = this.ContainerHtml(message) };
 
             if (mailAttachments is not null)
             {
                 foreach (var att in mailAttachments)
                 {
-                    var mimePart = new MimePart("text", "html")
+                    try
                     {
-                        ContentTransferEncoding = ContentEncoding.Base64,
-                        ContentDisposition = new ContentDisposition(ContentDisposition.Attachment) { FileName = att.FileName },
-                        Content = new MimeContent(new MemoryStream(Encoding.UTF8.GetBytes(att.Base64)))
-                    };
+                        var fileBytes = Convert.FromBase64String(att.Base64);
+                        var contentType = MimeTypes.GetMimeType(att.FileName);
 
-                    _ = mimeMessage.Attachments.Append(mimePart);
+                        bodyBuilder.Attachments.Add(att.FileName, fileBytes, ContentType.Parse(contentType));
+                    }
+                    catch (FormatException)
+                    {
+                        throw new FormatException($"The Base64 content of attachment '{att.FileName}' is invalid.");
+                    }
                 }
             }
 
+            mimeMessage.Body = bodyBuilder.ToMessageBody();
+
             using var client = new MailKit.Net.Smtp.SmtpClient();
+
             if (this.ServerCertificateValidation)
-                client.ServerCertificateValidationCallback += (sender, certificate, chain, errors) => { return this.ServerCertificateValidation; };
+                client.ServerCertificateValidationCallback += (sender, certificate, chain, errors) => true;
 
             try
             {
                 await client.ConnectAsync(this.Host, this.Port, this.SecureSocketOptions);
                 await client.AuthenticateAsync(this.UserMail, this.Password);
-
                 await client.SendAsync(mimeMessage);
             }
             catch (ArgumentNullException ex)

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Quiron.Mail</id>
-    <version>1.4.1</version>
+    <version>1.4.2</version>
     <title>Quiron.Mail</title>
     <authors>EliasRMJ</authors>
     <license type="expression">MIT</license>
@@ -10,7 +10,7 @@
     <icon>quiron-package.png</icon>
     <readme>README.md</readme>
     <description>Package that allows you to configure and send emails easily in your project.</description>
-    <releaseNotes>[Bug fix] change get and set</releaseNotes>
+    <releaseNotes>[Bug fix] Attachment file error</releaseNotes>
     <copyright>MIT</copyright>
     <tags>quiron,mail</tags>
     <repository type="git" url="https://github.com/EliasRMJ/Quiron.Mail" commit="2befa9dd34a1d77af397ad9a128990107e9c5311" />

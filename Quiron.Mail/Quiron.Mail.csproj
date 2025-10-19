@@ -12,11 +12,11 @@
     <PackageIcon>quiron-package.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <PackageTags>quiron,mail</PackageTags>
-    <PackageReleaseNotes>[Bug fix] change get and set</PackageReleaseNotes>
+    <PackageReleaseNotes>[Bug fix] Attachment file error</PackageReleaseNotes>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>1.4.01</Version>
-    <AssemblyVersion>1.4.01.0</AssemblyVersion>
-    <FileVersion>1.4.01.0</FileVersion>
+    <Version>1.4.2</Version>
+    <AssemblyVersion>1.4.2.0</AssemblyVersion>
+    <FileVersion>1.4.2.0</FileVersion>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <ApplicationIcon>quiron-package.ico</ApplicationIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>

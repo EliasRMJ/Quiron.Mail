@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Meus Projetos GUI\\SGS V_W\\Quiron.Mail\\Quiron.Mail\\Quiron.Mail.csproj": {
-      "version": "1.4.1",
+      "version": "1.4.2",
       "restore": {
         "projectUniqueName": "C:\\Meus Projetos GUI\\SGS V_W\\Quiron.Mail\\Quiron.Mail\\Quiron.Mail.csproj",
         "projectName": "Quiron.Mail",
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.2.25502.107/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

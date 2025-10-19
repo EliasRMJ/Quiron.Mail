@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Meus Projetos GUI\\SGS V_W\\Quiron.Mail\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D57B5785-4CD5-4A4D-A3C7-BF356CF2EFEE}|Quiron.Mail\\Quiron.Mail.csproj|c:\\meus projetos gui\\sgs v_w\\quiron.mail\\quiron.mail\\quiron.mail.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D57B5785-4CD5-4A4D-A3C7-BF356CF2EFEE}|Quiron.Mail\\Quiron.Mail.csproj|solutionrelative:quiron.mail\\quiron.mail.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D57B5785-4CD5-4A4D-A3C7-BF356CF2EFEE}|Quiron.Mail\\Quiron.Mail.csproj|c:\\meus projetos gui\\sgs v_w\\quiron.mail\\quiron.mail\\serveremail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D57B5785-4CD5-4A4D-A3C7-BF356CF2EFEE}|Quiron.Mail\\Quiron.Mail.csproj|solutionrelative:quiron.mail\\serveremail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D57B5785-4CD5-4A4D-A3C7-BF356CF2EFEE}|Quiron.Mail\\Quiron.Mail.csproj|c:\\meus projetos gui\\sgs v_w\\quiron.mail\\quiron.mail\\quiron.mail.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{D57B5785-4CD5-4A4D-A3C7-BF356CF2EFEE}|Quiron.Mail\\Quiron.Mail.csproj|solutionrelative:quiron.mail\\quiron.mail.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,37 +51,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Quiron.Mail",
-              "DocumentMoniker": "C:\\Meus Projetos GUI\\SGS V_W\\Quiron.Mail\\Quiron.Mail\\Quiron.Mail.csproj",
-              "RelativeDocumentMoniker": "Quiron.Mail\\Quiron.Mail.csproj",
-              "ToolTip": "C:\\Meus Projetos GUI\\SGS V_W\\Quiron.Mail\\Quiron.Mail\\Quiron.Mail.csproj",
-              "RelativeToolTip": "Quiron.Mail\\Quiron.Mail.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-17T17:20:36.575Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Quiron.Mail",
-              "DocumentMoniker": "C:\\Meus Projetos GUI\\SGS V_W\\Quiron.Mail\\Quiron.Mail\\Quiron.Mail.csproj",
-              "RelativeDocumentMoniker": "Quiron.Mail\\Quiron.Mail.csproj",
-              "ToolTip": "C:\\Meus Projetos GUI\\SGS V_W\\Quiron.Mail\\Quiron.Mail\\Quiron.Mail.csproj",
-              "RelativeToolTip": "Quiron.Mail\\Quiron.Mail.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-17T17:20:23.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ServerEmail.cs",
               "DocumentMoniker": "C:\\Meus Projetos GUI\\SGS V_W\\Quiron.Mail\\Quiron.Mail\\ServerEmail.cs",
               "RelativeDocumentMoniker": "Quiron.Mail\\ServerEmail.cs",
               "ToolTip": "C:\\Meus Projetos GUI\\SGS V_W\\Quiron.Mail\\Quiron.Mail\\ServerEmail.cs",
               "RelativeToolTip": "Quiron.Mail\\ServerEmail.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAiwBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAACwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T13:57:34.637Z",
               "EditorCaption": ""
